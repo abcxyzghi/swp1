@@ -19,12 +19,12 @@ import { tablesProjectData, tablesTableData } from 'variables/general';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import cusomterApi from 'api/customerApi';
 import Pagination from 'components/Customer/Pagination';
-import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useCustomerContext } from 'layouts/CustomerContex';
 
-function CustomerDetail() {
+function EditCustomer() {
   const { id } = useParams();
-  const history = useHistory();
+  const navigate = useNavigate();
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [email, setEmail] = useState();
@@ -87,10 +87,10 @@ function CustomerDetail() {
             onClick={() => {
               if (id !== undefined) {
                 updateData({ id, name, age, email });
-                history.push('/admin/customers');
+                navigate('/admin/customers');
               } else {
                 addData({ name, age, email });
-                history.push('/admin/customers');
+                navigate('/admin/customers');
               }
             }}
           >
@@ -103,4 +103,4 @@ function CustomerDetail() {
   );
 }
 
-export default CustomerDetail;
+export default EditCustomer;

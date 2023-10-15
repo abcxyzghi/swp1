@@ -1,9 +1,8 @@
 // import
 import Dashboard from 'views/Dashboard/Dashboard.js';
 import TablesCustomer from 'views/Dashboard/TablesCustomer.js';
-import CustomerDetail from 'views/Pages/CustomerDetail.js';
 import FormCustomer from 'views/Pages/FormCustomer';
-import CustomerDetail from 'views/Dashboard/CustomerDetail.js';
+import CustomerDetail from './views/Pages/CustomerDetail';
 import Billing from 'views/Dashboard/Billing.js';
 import RTLPage from 'views/RTL/RTLPage.js';
 import Profile from 'views/Dashboard/Profile.js';

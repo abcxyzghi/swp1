@@ -19,14 +19,14 @@
 import { Avatar, Badge, Button, Flex, Td, Text, Tr, useColorModeValue } from '@chakra-ui/react';
 import { useCustomerContext } from 'layouts/CustomerContex';
 import React from 'react';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useNavigate } from 'react-router-dom';
 
 function TablesTableRow(props) {
   const { id, fullname, age, email, phone, lastItem } = props;
   const textColor = useColorModeValue('gray.700', 'white');
   const bgStatus = useColorModeValue('gray.400', '#1a202c');
   const colorStatus = useColorModeValue('white', 'gray.400');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const { customers, updateData, deleteData } = useCustomerContext();
   return (
@@ -37,7 +37,7 @@ function TablesTableRow(props) {
         borderBottomColor="#56577A"
         padding={'16px 0px'}
         onClick={() => {
-          history.push(`/admin/detail/customer/${id}`);
+          navigate(`/admin/detail/customer/${id}`);
         }}
       >
         <Text fontSize="sm" color="#fff" fontWeight="normal">
@@ -49,7 +49,7 @@ function TablesTableRow(props) {
         borderBottomColor="#56577A"
         padding={'16px 0px'}
         onClick={() => {
-          history.push(`/admin/detail/customer/${id}`);
+          navigate(`/admin/detail/customer/${id}`);
         }}
       >
         <Text fontSize="sm" color="#fff" fontWeight="normal">
@@ -61,7 +61,7 @@ function TablesTableRow(props) {
         borderBottomColor="#56577A"
         padding={'16px 0px'}
         onClick={() => {
-          history.push(`/admin/detail/customer/${id}`);
+          navigate(`/admin/detail/customer/${id}`);
         }}
       >
         <Text fontSize="sm" color="#fff" fontWeight="normal">
@@ -73,7 +73,7 @@ function TablesTableRow(props) {
         borderBottomColor="#56577A"
         padding={'16px 0px'}
         onClick={() => {
-          history.push(`/admin/detail/customer/${id}`);
+          navigate(`/admin/detail/customer/${id}`);
         }}
       >
         <Text fontSize="sm" color="#fff" fontWeight="normal">
@@ -85,7 +85,7 @@ function TablesTableRow(props) {
         borderBottomColor="#56577A"
         padding={'16px 0px'}
         onClick={() => {
-          history.push(`/admin/detail/customer/${id}`);
+          navigate(`/admin/detail/customer/${id}`);
         }}
       >
         <Text fontSize="sm" color="#fff" fontWeight="normal">
@@ -99,7 +99,7 @@ function TablesTableRow(props) {
             bg="transparent"
             variant="no-hover"
             onClick={() => {
-              history.push(`/admin/edit/customer/${id}`);
+              navigate(`/admin/edit/customer/${id}`);
             }}
           >
             <Text fontSize="sm" color="gray.400" fontWeight="bold" cursor="pointer">
@@ -112,7 +112,7 @@ function TablesTableRow(props) {
             variant="no-hover"
             onClick={() => {
               deleteData(id);
-              history.push(`/admin/customers`);
+              navigate(`/admin/customers`);
             }}
           >
             <Text fontSize="sm" color="gray.400" fontWeight="bold" cursor="pointer">

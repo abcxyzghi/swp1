@@ -32,12 +32,12 @@ import { tablesProjectData, tablesTableData } from 'variables/general';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import cusomterApi from 'api/customerApi';
 import { EditIcon } from '@chakra-ui/icons';
-import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useCustomerContext } from 'layouts/CustomerContex';
 
 function CustomerDetail() {
   const [customer, setCustomer] = useState();
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id } = useParams();
   const { customers, updateData } = useCustomerContext();
   useEffect(() => {
@@ -71,7 +71,7 @@ function CustomerDetail() {
           borderRadius="md"
           cursor={'pointer'}
           onClick={() => {
-            history.push(`/admin/edit/customer/${id}`);
+            navigate(`/admin/edit/customer/${id}`);
           }}
         >
           <EditIcon />
